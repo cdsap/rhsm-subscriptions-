@@ -1,7 +1,18 @@
 buildscript {
     apply from: "dependencies.gradle"
 }
+plugins {
+    id("com.gradle.enterprise") version "3.16"
+}
 
+gradleEnterprise {
+    server = "http://ge.solutions-team.gradle.com"
+    allowUntrustedServer = true
+    buildScan {
+        publishAlways()
+
+    }
+}
 rootProject.name = 'rhsm-subscriptions'
 include ':api'
 include ':clients-core'
