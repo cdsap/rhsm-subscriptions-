@@ -10,7 +10,9 @@ gradleEnterprise {
     allowUntrustedServer = true
     buildScan {
         publishAlways()
-
+        capture {
+            taskInputFiles = true
+        }
     }
 }
 rootProject.name = 'rhsm-subscriptions'
